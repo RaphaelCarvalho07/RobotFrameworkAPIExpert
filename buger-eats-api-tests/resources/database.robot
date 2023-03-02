@@ -9,9 +9,17 @@ Library                     RobotMongoDBLibrary.Find
 
 *Keywords*
 Remove Partner By Name
-    [Arguments]             ${partner_name} 
+    [Arguments]             ${partner_name}
 
     ${filter}               Create Dictionary
-    ...                     ${partner_name}
+    ...                     name=${partner_name}
 
     DeleteOne               ${MONGO_URI}                        ${filter}
+
+# Remove Partner By Name
+#     [Arguments]             ${partner_name} 
+
+#     ${filter}               Create Dictionary
+#     ...                     ${partner_name}
+
+#     DeleteOne               ${MONGO_URI}                        ${filter}

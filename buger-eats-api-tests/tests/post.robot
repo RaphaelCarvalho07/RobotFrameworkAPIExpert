@@ -7,18 +7,16 @@ Resource                    ${EXECDIR}/resources/base.robot
 Should create a new partner
 
     ${payload}              Create Dictionary
-    ...                     name=Pizzas Koi
+    ...                     name=Pizzas Raphilske
     ...                     email=contato@koi.com.br
     ...                     whatsapp=21989999999
     ...                     business=Restaurante
 
-
+    Remove Partner By Name  Pizzas Raphilske
 
     ${filter}               Create Dictionary
-    ...                     name=Pizzas Koi
-
-    DeleteOne               ${MONGO_URI}                        ${filter}
-
+    ...                     name=Pizzas Raphilske
+ 
     ${response}             POST Partner                         ${payload}
 
     Status Should Be        201
