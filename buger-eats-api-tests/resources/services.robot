@@ -19,3 +19,10 @@ POST Partner
     ...                     expected_status=any
 
     [Return]                ${response}
+
+GET Partners
+    ${response}             GET                                ${BASE_URL}
+    ...                     headers=${HEADERS}
+    ...                     expected_status=any
+
+    [Return]                ${response}
