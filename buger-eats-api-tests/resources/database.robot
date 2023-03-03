@@ -16,10 +16,14 @@ Remove Partner By Name
 
     DeleteOne               ${MONGO_URI}                        ${filter}
 
-# Remove Partner By Name
-#     [Arguments]             ${partner_name} 
 
-#     ${filter}               Create Dictionary
-#     ...                     ${partner_name}
+Find Partner By Name
+    [Arguments]             ${partner_name}
 
-#     DeleteOne               ${MONGO_URI}                        ${filter}
+    ${filter}               Create Dictionary
+    ...                     name=${partner_name}    
+
+    ${results}              Find                                ${MONGO_URI}       ${filter}
+
+    [Return]                ${results}[0]
+
