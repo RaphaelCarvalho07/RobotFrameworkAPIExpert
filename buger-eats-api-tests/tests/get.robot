@@ -2,19 +2,35 @@
 Documentation                   GET /partners
 
 Resource                        ${EXECDIR}/resources/base.robot
+ 
+Suite Setup                     Create Partner List
 
 *Test Cases*
 Should return a partner list
+        
+        ${response}                     GET Partners
+        Status Should Be                200
 
-    ${partners}                 Factory Partner List
+        ${size}                         Get Length                              ${response.json()}
 
-    FOR     ${p}        IN      @{partners}
-            POST Partner        ${p}  
-    END
+        Should Be True                  ${size} > 0
 
-    ${response}                 GET Partners
-    Status Should Be            200
+Should search partner by name
+        
+        ${response}                     Search Partner                          Luz da Lua
+        Status Should Be                200
 
-    ${size}                     Get Length                              ${response.json()}
+        ${size}                         Get Length                              ${response.json()}
 
-    Should Be True              ${size} > 0
+        Should Be True                  ${size} == 1
+
+        Should Be Equal                 ${response.json()}[0][name]             Bistrô Luz da Lua
+
+*Keywords*
+Create Partner List
+
+        ${partners}                     Factory Partner List
+
+        FOR     ${p}        IN          @{partners}
+                POST Partner            ${p}  
+        END
