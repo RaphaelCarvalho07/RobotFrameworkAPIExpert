@@ -1,5 +1,24 @@
 
 
+
+def factory_404_partner():
+    partner = {
+        'name': 'The Pit',
+        'email': 'contato@pit.com.br',
+        'whatsapp': '11999999999',
+        'business': 'Conveniência'
+    }
+    return partner
+
+def factory_enable_partner():
+    partner = {
+        'name': 'Forneria Rhaegus',
+        'email': 'contato@rhaegus.com.br',
+        'whatsapp': '11999999999',
+        'business': 'Restaurante'
+    }
+    return partner
+
 def factory_new_partner():
     partner = {
         'name': 'Pizzas Raphilske',

@@ -32,8 +32,18 @@ Search Partner
 
     ${query}                Create Dictionary                   name=${name}
 
-    ${response}             GET                                ${BASE_URL}
+    ${response}             GET                                 ${BASE_URL}
     ...                     params=${query}
+    ...                     headers=${HEADERS}
+    ...                     expected_status=any
+
+    [Return]                ${response}
+
+
+Enable Partner
+    [Arguments]             ${partner_id}
+
+    ${response}             PUT                                ${BASE_URL}/${partner_id}/enable
     ...                     headers=${HEADERS}
     ...                     expected_status=any
 
