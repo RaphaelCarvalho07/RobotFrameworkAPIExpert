@@ -19,6 +19,15 @@ def factory_enable_partner():
     }
     return partner
 
+def factory_disable_partner():
+    partner = {
+        'name': 'Quitanda Targaryen',
+        'email': 'contato@targaryen.com.br',
+        'whatsapp': '21999999999',
+        'business': 'Supermercado'
+    }
+    return partner
+
 def factory_new_partner():
     partner = {
         'name': 'Pizzas Raphilske',
