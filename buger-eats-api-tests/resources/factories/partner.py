@@ -10,6 +10,15 @@ def factory_404_partner():
     }
     return partner
 
+def factory_remove_partner():
+    partner = {
+        'name': 'Pub Odin',
+        'email': 'contato@odin.com.br',
+        'whatsapp': '21999999999',
+        'business': 'Conveniência'
+    }
+    return partner
+
 def factory_enable_partner():
     partner = {
         'name': 'Forneria Rhaegus',

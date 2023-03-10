@@ -23,7 +23,7 @@ Should disable a partner
     ${response}                 Disable Partner                      ${partner_id}
     Status Should Be            200    
 
-Should return 404 when try enable a inexistent partner
+Should return 404 when try enable an inexistent partner
 
     ${partner}                  Factory 404 Partner
 
@@ -34,7 +34,7 @@ Should return 404 when try enable a inexistent partner
     ${response}                 Enable Partner                      ${partner_id}
     Status Should Be            404
 
-Should return 404 when try disable a inexistent partner
+Should return 404 when try disable an inexistent partner
 
     ${partner}                  Factory 404 Partner
 
