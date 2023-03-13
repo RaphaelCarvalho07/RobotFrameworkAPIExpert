@@ -3,7 +3,7 @@ Documentation           RabbitNQ Helpers API
 
 *Variables*
 ${RABBIT_URL}               https://jackal.rmq.cloudamqp.com/api/queues/yignioko/email
-${RABBIT_HEADERS}           Content-Type=application/json   Authorization= Basic eWlnbmlva286aVBNbFNlYW1TMWo2RmUta3I5dENGOGpuTWtWOU1jMUs=
+${RABBIT_HEADERS}           Content-Type=application/json   Authorization=Basic eWlnbmlva286aVBNbFNlYW1TMWo2RmUta3I5dENGOGpuTWtWOU1jMUs=
 
 *Keywords*  
 Purge Messages
@@ -35,6 +35,6 @@ Get Message
     ...                     json=${payload}
     ...                     headers=${RABBIT_HEADERS}
 
-    [Return]                ${response}
+    [Return]                ${response.json()}[0]
 
 
